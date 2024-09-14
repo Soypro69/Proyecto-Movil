@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.Vinicio"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.ibb.co/mHjp510/estandarte-fondo-abstracto-colores-677411-3704.jpg"
+            Aspect="Fill" 
+            Opacity=".5"
+            HorizontalOptions="FillAndExpand" 
+            VerticalOptions="FillAndExpand"/>
+            <StackLayout>
+                <Label Text="SISTEMA DE VENTAS Y PEDIDOS" FontAttributes="Bold" Margin="0,20,0,0" TextColor="Black" HorizontalOptions="Center" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="USUARIO" TextColor="Black" ></Label>
+                    <Label Text="DNI" TextColor="Black" ></Label>
+                </StackLayout>
+                <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
+                    <Frame Grid.Row="0" Grid.Column="0" Margin="10" CornerRadius="10" BorderColor="Black">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://cdn-icons-png.flaticon.com/128/4129/4129528.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                            <Grid  RowDefinitions="15,15,15,35" VerticalOptions="Center">
+                                <Label Text="Total" TextColor="Black"></Label>
+                                <Label Text="Productos" TextColor="Black" Grid.Row="1"></Label>
+                                <Label Text="{Binding txtCantProductos}" TextColor="Red" Grid.Row="2"></Label>
+                                <Button Text="Info" CornerRadius="6" BackgroundColor="Black" TextColor="White"  Grid.Row="3" Clicked="Button_Clicked_1"></Button>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" Margin="10" CornerRadius="10" BorderColor="Black">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://cdn-icons-png.flaticon.com/128/4814/4814852.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                            <Grid RowDefinitions="15,15,15,35" VerticalOptions="Center">
+                                <Label Text="Total" TextColor="Black"></Label>
+                                <Label Text="Clientes" TextColor="Black" Grid.Row="1"></Label>
+                                <Label Text="0" TextColor="Red" Grid.Row="2"></Label>
+                                <Button Text="Info" CornerRadius="6" BackgroundColor="Black" TextColor="White"  Grid.Row="3" ></Button>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="0" Margin="10" CornerRadius="10" BorderColor="Black">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://cdn-icons-png.flaticon.com/128/4256/4256900.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                            <Grid  RowDefinitions="15,15,15,35" VerticalOptions="Center">
+                                <Label Text="Total" TextColor="Black"></Label>
+                                <Label Text="Ingresos" TextColor="Black" Grid.Row="1"></Label>
+                                <Label Text="0" TextColor="Red" Grid.Row="2"></Label>
+                                <Button Text="Info" CornerRadius="6" BackgroundColor="Black" TextColor="White"  Grid.Row="3" ></Button>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="1" Margin="10" CornerRadius="10" BorderColor="Black">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://cdn-icons-png.flaticon.com/128/2203/2203124.png" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                            <Grid  RowDefinitions="15,15,15,35" VerticalOptions="Center">
+                                <Label Text="Total" TextColor="Black"></Label>
+                                <Label Text="Delivery" TextColor="Black" Grid.Row="1"></Label>
+                                <Label Text="{Binding txtCantDelivery}" TextColor="Red" Grid.Row="2"></Label>
+                                <Button Text="Info" CornerRadius="6" BackgroundColor="Black" TextColor="White" Grid.Row="3" Clicked="Button_Clicked_2"></Button>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

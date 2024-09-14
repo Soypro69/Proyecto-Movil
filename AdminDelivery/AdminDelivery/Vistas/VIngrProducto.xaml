@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.VIngrProducto"
+             Title="Ingresar Producto">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.ibb.co/mHjp510/estandarte-fondo-abstracto-colores-677411-3704.jpg"
+                    Aspect="Fill" 
+                    Opacity=".5"
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand"
+                    />
+            <ScrollView>
+                <StackLayout>
+                    <Grid RowDefinitions="70,70,70,70,70,70,70,70" ColumnDefinitions="120,*">
+                        <Label Text="Nombre: " Grid.Row="0" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="ingrese nombre" Grid.Row="0" Grid.Column="1" FontSize="12" Text="{Binding txtNombre}"></Entry>
+                        <Label Text="PrecioCompra: " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="ingrese precio compra" Grid.Row="1" Grid.Column="1" FontSize="12" Text="{Binding txtPrecioCompra}"></Entry>
+                        <Label Text="PrecioVenta: " Grid.Row="2" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="ingrese nombre" Grid.Row="2" Grid.Column="1" FontSize="12" Text="{Binding txtPrecioVenta}"></Entry>
+                        <Label Text="Stock: " Grid.Row="3" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="ingrese stock" Grid.Row="3" Grid.Column="1" FontSize="12" Text="{Binding txtStock}"></Entry>
+                        <Label Text="Proveedor: " Grid.Row="4" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="ingrese proveedor" Grid.Row="4" Grid.Column="1" FontSize="12" Text="{Binding txtProveedor}"></Entry>
+                        <Label Text="Icono: " Grid.Row="5" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="ingrese icono" Grid.Row="5" Grid.Column="1" FontSize="12" Text="{Binding txtFoto}"></Entry>
+                        <Label Text="FechaVencimiento: " Grid.Row="6" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <DatePicker  Grid.Row="6" Grid.Column="1" FontSize="12" Date="{Binding txtFechaVencimiento}"></DatePicker>
+                    </Grid>
+                    <Button Text="Registrar" 
+                            Command="{Binding ComandoInsertarProducto}"
+                            BackgroundColor="LightSkyBlue" 
+                            TextColor="White"
+                            CornerRadius="20"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="150"
+                            HeightRequest="50"
+                            Margin="0,0,0,0" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+            
+    </ContentPage.Content>
+</ContentPage>

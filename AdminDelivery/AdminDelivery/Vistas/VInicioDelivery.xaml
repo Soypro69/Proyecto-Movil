@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.VInicioDelivery"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.ibb.co/mHjp510/estandarte-fondo-abstracto-colores-677411-3704.jpg"
+                   Aspect="Fill" 
+                   Opacity=".5"
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"
+                   />
+
+            <StackLayout Padding="10">
+                <!-- Título de la página -->
+                <Label Text="Listado de Repartidores" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center" 
+                   Padding="10" />
+                <!-- Botón para registrar un nuevo producto -->
+                <Frame CornerRadius="5" Margin="250,0,10,0">
+                    <StackLayout>
+                        <ImageButton Source="https://i.ibb.co/G3mzfWH/logistics-delivery-1.png"
+                                 BackgroundColor="Transparent"
+                                 Clicked="ImageButton_Clicked"/>
+                        <Label Text="Repartidores" Grid.Row="1" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" FontSize="11"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Encabezado de la tabla -->
+                <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="LightGray" Spacing="30">
+                    <Label Text="Vehículos" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="Small"/>
+                    <Label Text="Clase" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Small"/>
+                    <Label Text="Descripción" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small"/>
+                </StackLayout>
+
+                <CollectionView ItemsSource="{Binding ListDelivery}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10">
+                        </GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Margin="10,0,10,0">
+                                <StackLayout Orientation="Horizontal" Spacing="70">
+                                    <!-- Mostrar la imagen del vehículo -->
+                                    <Image Source="{Binding fotoVehiculo}" WidthRequest="80"></Image>
+
+                                    <Grid RowDefinitions="*,*,*" ColumnDefinitions="100,*">
+                                        <!-- Nombre Completo del repartidor -->
+                                        <Label Text="Nombre Completo:" TextColor="Black"></Label>
+                                        <Label Text="{Binding NombreCompleto}" Grid.Column="1" TextColor="Black" FontAttributes="Bold"></Label>
+
+                                        <!-- Placa del vehículo -->
+                                        <Label Text="Placa Vehículo:" Grid.Column="0" Grid.Row="1" TextColor="Black"></Label>
+                                        <Label Text="{Binding PlacaVehiculo}" Grid.Row="1" Grid.Column="1" TextColor="Black" FontAttributes="Bold"></Label>
+
+                                        <!-- Teléfono del repartidor -->
+                                        <Label Text="Teléfono:" Grid.Column="0" Grid.Row="2" TextColor="Black"></Label>
+                                        <Label Text="{Binding Telefono}" Grid.Row="2" Grid.Column="1" TextColor="Black" FontAttributes="Bold"></Label>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Botón de regresar con estilo actualizado -->
+                <Button Text="Regresar"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Clicked="Button_Clicked"
+                    CornerRadius="20"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    Margin="0,20,0,0" />
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

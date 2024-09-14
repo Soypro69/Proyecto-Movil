@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.VLogin"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.ibb.co/mHjp510/estandarte-fondo-abstracto-colores-677411-3704.jpg"
+                   Aspect="Fill" 
+                   Opacity=".5"
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"
+                   />
+            <StackLayout Margin="50"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <Frame CornerRadius="25">
+                    <StackLayout WidthRequest="300">
+                        <Label Text="Iniciar Sesion"
+                               TextTransform="Uppercase"
+                               TextColor="#DB4017" 
+                               FontAttributes="Bold" 
+                               FontSize="20" 
+                               HorizontalOptions="Center"
+                               />
+                        <Image 
+                            Source="https://i.ibb.co/Z8nvX3S/Dynamics-365-logo-2.png"
+                               />
+                        <Image Source="https://i.ibb.co/kxxc8Cc/Microsoft-Logo.png"/>
+                        <Entry Placeholder="Ingrese su Email"
+                               HorizontalTextAlignment="Center"
+                               Margin="0,10,0,10"
+                               Text="{Binding txtCorreo}"
+                               PlaceholderColor="#7B7B7A"
+                               TextColor="Black"/>
+
+                        <Entry Placeholder="Ingrese su Contraseña"
+                               HorizontalTextAlignment="Center"
+                               Margin="0,10,0,10"
+                               Text="{Binding txtPass}"
+                               PlaceholderColor="#7B7B7A"
+                               TextColor="Black"/>
+                        <Button Text="Ingresar"
+                                BackgroundColor="#22bb33"
+                                CornerRadius="10"  
+                                Command="{Binding IniciarSesion}"
+                                />
+
+                        <Label HorizontalOptions="Center" Margin="0,15,0,15">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="¿No tienes cuenta? " TextColor="Black"/>
+                                    <Span Text="Registrate"
+                                          TextColor="Red">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Ir_A_Registro"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label HorizontalOptions="Center" Margin="0,15,0,15">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="¿Olvidaste tu contraseña? " TextColor="Black"/>
+                                    <Span Text="Cambiar Contraseña"
+                                          TextColor="Red">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

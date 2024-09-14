@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.VIngrDelivery"
+             Title="Ingresar Repartidores">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.ibb.co/mHjp510/estandarte-fondo-abstracto-colores-677411-3704.jpg"
+                Aspect="Fill" 
+                Opacity=".5"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand"
+                />
+            <ScrollView>
+                <StackLayout>
+                    <Grid RowDefinitions="70,70,70,70,70,70,70,70,70,70,70" ColumnDefinitions="120,170">
+                        <Label Text="Nombre Completo: " Grid.Row="0" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese nombre completo" Grid.Row="0" Grid.Column="1" FontSize="12" Text="{Binding txtNombreCompleto}"></Entry>
+
+                        <Label Text="Correo: " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese correo" Grid.Row="1" Grid.Column="1" FontSize="12" Text="{Binding txtCorreo}"></Entry>
+
+                        <Label Text="Dirección: " Grid.Row="2" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese dirección" Grid.Row="2" Grid.Column="1" FontSize="12" Text="{Binding txtDireccion}"></Entry>
+
+                        <Label Text="DNI: " Grid.Row="3" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese DNI" Grid.Row="3" Grid.Column="1" FontSize="12" Text="{Binding txtDni}"></Entry>
+
+                        <Label Text="Fecha de Nacimiento: " Grid.Row="4" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <DatePicker Grid.Row="4" Grid.Column="1" FontSize="12" Date="{Binding txtFechaNacimiento}"></DatePicker>
+
+                        <Label Text="Foto: " Grid.Row="5" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese foto" Grid.Row="5" Grid.Column="1" FontSize="12" Text="{Binding txtFoto}"></Entry>
+
+                        <Label Text="Color Vehículo: " Grid.Row="6" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese color del vehículo" Grid.Row="6" Grid.Column="1" FontSize="12" Text="{Binding txtColorVehiculo}"></Entry>
+
+                        <Label Text="Modelo Vehículo: " Grid.Row="7" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese modelo del vehículo" Grid.Row="7" Grid.Column="1" FontSize="12" Text="{Binding txtModeloVehiculo}"></Entry>
+
+                        <Label Text="Placa Vehículo: " Grid.Row="8" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese placa del vehículo" Grid.Row="8" Grid.Column="1" FontSize="12" Text="{Binding txtPlacaVehiculo}"></Entry>
+
+                        <Label Text="Teléfono: " Grid.Row="9" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese teléfono" Grid.Row="9" Grid.Column="1" FontSize="12" Text="{Binding txtTelefono}"></Entry>
+
+                        <Label Text="Foto Vehículo: " Grid.Row="10" Grid.Column="0" VerticalOptions="Center" TextColor="Black" FontSize="14"></Label>
+                        <Entry Placeholder="Ingrese foto del vehículo" Grid.Row="10" Grid.Column="1" FontSize="12" Text="{Binding txtFotoVehiculo}"></Entry>
+                    </Grid>
+
+                    <Button Text="Registrar" 
+                            Command="{Binding ComandoInsertarCliente}"
+                            BackgroundColor="LightSkyBlue" 
+                            TextColor="White"
+                            CornerRadius="20"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="150"
+                            HeightRequest="50"
+                            Margin="0,50,0,0" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
